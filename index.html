@@ -14,9 +14,11 @@
             <div class="envelope"></div>
             <div class="front"></div>
             <div class="card">
-                <div class="text">Happy</br> birthday's</br> Day!</div>
-                <div class="heart" </div>
+                <div class="text">Happy</br>Birthday's
+                <strong><div id="nameBox"></div></strong>
                 </div>
+                
+                <div class="heart"></div>
                 <div class="hearts">
                     <div class="one"></div>
                     <div class="two"></div>
@@ -40,6 +42,27 @@
                 }, 'slow');
             });
         });
+    </script>
+
+    <script>
+        // Función para obtener los parámetros de la URL
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get("name"),
+            };
+        }
+
+        // Aplicar los parámetros al HTML
+        function aplicarParametros() {
+            const { name } = getQueryParams();
+            const nameBox = document.getElementById("nameBox");
+
+            if (name && nameBox) nameBox.innerText = name;
+        }
+
+        // Ejecutar al cargar la página
+        aplicarParametros();
     </script>
 
 </body>
