@@ -65,18 +65,19 @@ body {
     top:19px;
     left:65px;
     color: #000000;
+    line-height: 1.1;
   }
   
   .heart {
     background-color: rgb(214, 41, 41);
     display: inline-block;
-    height: 30px;
+    height: 22px;
     margin: 0 10px;
     position: relative;
-    top: 110px;
+    top: 123px;
     left:105px;
     transform: rotate(-45deg);
-    width: 30px;
+    width: 22px;
   }
   
   .heart:before,
@@ -84,9 +85,9 @@ body {
     content: "";
     background-color: rgb(214, 41, 41);
     border-radius: 50%;
-    height: 30px;
+    height: 22px;
     position: absolute;
-    width: 30px;
+    width: 22px;
   }
   
   .heart:before {
