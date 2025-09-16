@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
@@ -13,39 +13,59 @@
         <div class="valentines">
             <div class="envelope"></div>
             <div class="front"></div>
+
+            <div class="escudo"></div>
+
             <div class="card">
                 <div class="text">Happy</br>Birthday's
-                <strong><div id="nameBox"></div></strong>
-                </div>
-                
-                <div class="heart"></div>
-                <div class="hearts">
-                    <div class="one"></div>
-                    <div class="two"></div>
-                    <div class="three"></div>
-                    <div class="four"></div>
-                    <div class="five"></div>
+                    <strong>
+                        <div id="nameBox"></div>
+                    </strong>
                 </div>
             </div>
+
+            <div class="estrellas-left">
+                <div class="estrella one"></div>
+                <div class="estrella two"></div>
+                <div class="estrella three"></div>
+            </div>
+            <div class="estrellas-right">
+                <div class="estrella four"></div>
+                <div class="estrella five"></div>
+                <div class="estrella six"></div>
+            </div>
+
+            <div class="fireworks-container">
+                <div class="firework"></div>
+                <div class="firework"></div>
+                <div class="firework"></div>
+            </div>
+
         </div>
         <div class="shadow"></div>
     </div>
+
     <script>
         $(document).ready(function () {
             $('.container').mouseenter(function () {
-                $('.card').stop().animate({
-                    top: '-90px'
-                }, 'slow');
+                $('.card').stop().animate({ top: '-90px' }, 'slow');
+                $('.escudo').stop().animate({ top: '50px', opacity: 1 }, 'slow');
+                $('.estrellas-left').stop().animate({ opacity: 1 }, 'slow');
+                $('.estrellas-right').stop().animate({ opacity: 1 }, 'slow');
+                $('.estrella').css('animation-play-state', 'running');
+                $('.firework').css('animation-play-state', 'running');
             }).mouseleave(function () {
-                $('.card').stop().animate({
-                    top: 0
-                }, 'slow');
+                $('.card').stop().animate({ top: 0 }, 'slow');
+                $('.escudo').stop().animate({ top: '250px', opacity: 0 }, 'slow');
+                $('.estrellas-left').stop().animate({ opacity: 0 }, 'slow');
+                $('.estrellas-right').stop().animate({ opacity: 0 }, 'slow');
+                $('.estrella').css('animation-play-state', 'paused');
+                $('.firework').css('animation-play-state', 'paused');
             });
         });
     </script>
 
     <script>
-        // Función para obtener los parámetros de la URL
         function getQueryParams() {
             const params = new URLSearchParams(window.location.search);
             return {
@@ -53,7 +73,6 @@
             };
         }
 
-        // Aplicar los parámetros al HTML
         function aplicarParametros() {
             const { name } = getQueryParams();
             const nameBox = document.getElementById("nameBox");
@@ -61,7 +80,6 @@
             if (name && nameBox) nameBox.innerText = name;
         }
 
-        // Ejecutar al cargar la página
         aplicarParametros();
     </script>
 
