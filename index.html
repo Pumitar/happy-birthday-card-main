@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -11,7 +12,7 @@
     <h1 class="titulo-hogwarts">The Hogwarts</h1>
 
     <div class="container">
-    <!-- aquí sigue tu código del sobre -->
+        <!-- aquí sigue tu código del sobre -->
     </div>
     <div class="container">
         <div class="valentines">
@@ -20,7 +21,7 @@
 
             <!-- Escudo Hogwarts en la carta -->
             <div class="escudo">
-                 <img src="img/hogwarts.png" alt="Hogwarts">
+                <img src="img/hogwarts.png" alt="Hogwarts">
             </div>
 
             <!-- Escudo Slytherin en el sobre (sello) -->
@@ -29,7 +30,7 @@
             </div>
 
             <div class="card">
-                <div class="text"> Feliz <br> Cumpleaños 
+                <div class="text"> Feliz <br> Cumpleaños
                     <strong>
                         <div id="nameBox"></div>
                     </strong>
@@ -87,11 +88,15 @@
             const { name } = getQueryParams();
             const nameBox = document.getElementById("nameBox");
 
-            if (name && nameBox) nameBox.innerText = `✨ ${name} ✨`;
+            if (name && nameBox) {
+                nameBox.innerText = `✨ ${name} ✨`;
+            }
         }
 
         aplicarParametros();
+
     </script>
 
 </body>
+
 </html>
