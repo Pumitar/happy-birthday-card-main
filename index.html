@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- nuevo html -->
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
@@ -9,15 +8,28 @@
 </head>
 
 <body>
+    <h1 class="titulo-hogwarts">The Hogwarts</h1>
+
+    <div class="container">
+    <!-- aquí sigue tu código del sobre -->
+    </div>
     <div class="container">
         <div class="valentines">
             <div class="envelope"></div>
             <div class="front"></div>
 
-            <div class="escudo"></div>
+            <!-- Escudo Hogwarts en la carta -->
+            <div class="escudo">
+                 <img src="img/hogwarts.png" alt="Hogwarts">
+            </div>
+
+            <!-- Escudo Slytherin en el sobre (sello) -->
+            <div class="sello-slytherin">
+                <img src="img/slytherin.png" alt="Slytherin" class="slytherin-logo">
+            </div>
 
             <div class="card">
-                <div class="text">Happy</br>Birthday's
+                <div class="text"> Feliz <br> Cumpleaños 
                     <strong>
                         <div id="nameBox"></div>
                     </strong>
@@ -36,11 +48,11 @@
             </div>
 
             <div class="fireworks-container">
-                <div class="firework"></div>
-                <div class="firework"></div>
-                <div class="firework"></div>
+                <div class="firework red"></div>
+                <div class="firework yellow"></div>
+                <div class="firework blue"></div>
+                <div class="firework green"></div>
             </div>
-
         </div>
         <div class="shadow"></div>
     </div>
@@ -48,8 +60,8 @@
     <script>
         $(document).ready(function () {
             $('.container').mouseenter(function () {
-                $('.card').stop().animate({ top: '-90px' }, 'slow');
-                $('.escudo').stop().animate({ top: '50px', opacity: 1 }, 'slow');
+                $('.card').stop().animate({ top: '-120px' }, 'slow');
+                $('.escudo').stop().animate({ top: '30px', opacity: 1 }, 'slow');
                 $('.estrellas-left').stop().animate({ opacity: 1 }, 'slow');
                 $('.estrellas-right').stop().animate({ opacity: 1 }, 'slow');
                 $('.estrella').css('animation-play-state', 'running');
@@ -63,13 +75,11 @@
                 $('.firework').css('animation-play-state', 'paused');
             });
         });
-    </script>
 
-    <script>
         function getQueryParams() {
             const params = new URLSearchParams(window.location.search);
             return {
-                name: params.get("name"),
+                name: params.get("✨name✨"),
             };
         }
 
@@ -84,5 +94,4 @@
     </script>
 
 </body>
-
 </html>
